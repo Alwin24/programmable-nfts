@@ -1,6 +1,6 @@
 import { Connection, Keypair, PublicKey, clusterApiUrl } from '@solana/web3.js'
 import { Metaplex, keypairIdentity, bundlrStorage, toMetaplexFile, toBigNumber } from '@metaplex-foundation/js'
-import { TokenStandard, createTransferInstruction } from '@metaplex-foundation/mpl-token-metadata'
+import { TokenStandard } from '@metaplex-foundation/mpl-token-metadata'
 import { readFileSync } from 'fs'
 
 const QUICKNODE_RPC = clusterApiUrl('devnet')
@@ -9,15 +9,14 @@ const WALLET = Keypair.fromSecretKey(
 	new Uint8Array(JSON.parse(readFileSync('/home/alwin/second-wallet/second-keypair.json', 'utf8')))
 )
 
-const metaplex = Metaplex.make(SOLANA_CONNECTION)
-	.use(keypairIdentity(WALLET))
-	// .use(
-	// 	bundlrStorage({
-	// 		address: 'https://devnet.bundlr.network',
-	// 		providerUrl: QUICKNODE_RPC,
-	// 		timeout: 60000,
-	// 	})
-	// )
+const metaplex = Metaplex.make(SOLANA_CONNECTION).use(keypairIdentity(WALLET))
+// .use(
+// 	bundlrStorage({
+// 		address: 'https://devnet.bundlr.network',
+// 		providerUrl: QUICKNODE_RPC,
+// 		timeout: 60000,
+// 	})
+// )
 
 const CONFIG = {
 	imgName: 'QuickNode Pixel',
