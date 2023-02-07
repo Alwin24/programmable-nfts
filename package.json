@@ -1,0 +1,11 @@
+{
+  "name": "programmable-nfts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@metaplex-foundation/js": "^0.18.0",
+    "@solana/web3.js": "^1.73.2",
+    "prettier": "^2.8.3"
+  }
+}
